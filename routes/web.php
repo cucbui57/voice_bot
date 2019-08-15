@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','CallSteeringController@index');
+Route::get('/auto-order','AutoOrderController@index');
+Route::get('/customer-care','CustomerCareController@index');
+Route::get('/telesale','TeleSaleController@index');
+
+Route::post('/CallSteering/getHightChart', 'CallSteeringController@getHightChart');
+Route::post('/CallSteering/getLineChart', 'CallSteeringController@getLineChart');
+Route::post('/CallSteering/drawTableStatic','CallSteeringController@drawTableStatic' );
+Route::post('/TeleSale/getHightChart', 'TeleSaleController@getHightChart');
+Route::post('/AutoOrder/getHightChart', 'AutoOrderController@getHightChart');
+Route::post('/CustomerCare/getHightChart', 'CustomerCareController@getHightChart');
